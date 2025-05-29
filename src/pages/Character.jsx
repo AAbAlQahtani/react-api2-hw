@@ -77,54 +77,22 @@ export default function Character() {
         <div className="min-h-screen bg-gray-100 p-8">
             <h2 className="text-4xl font-bold text-center text-indigo-700 mb-8">Characters</h2>
 
-
-            <div className="flex justify-center flex-col items-center mb-10">
-                
-
-                <div className="bg-white p-4 mb-6 rounded shadow-md w-full lg:w-3/6">
-                    <h3 className="text-xl font-bold mb-5">Add new character</h3>
-
-                    <input type="text"
-                        placeholder="image url" value={image}
-                        onChange={(e) => setImage(e.target.value)}
-                        className="w-full mb-2 p-2 border border-gray-300 rounded" />
-
-                    <input type="text" placeholder="Charater name" value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className="w-full mb-2 p-2 border border-gray-300 rounded" />
-
-                    <select value={gender}
-                        onChange={(e) => setGender(e.target.value)}
-                        className="w-full mb-2 p-2 border border-gray-300 rounded">
-
-                        <option>male</option>
-                        <option>female</option>
-
-                    </select>
-
-                    <button onClick={AddCharater}
-                        className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
-                        Add </button>
-                </div>
-            </div>
-
-
-<div className="w-full lg:w-3/6">
-                    <input type="text"
-                        placeholder="search for character "
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className="mb-6 p-2 border border-gray-300 rounded w-3/6 bg-white" />
-                    <button onClick={searchBtn}
-                        className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 m-3">
-                        Search</button>
-                    {/* <button onClick={}
+            <div className="w-full lg:w-3/6">
+                <input type="text"
+                    placeholder="search for character "
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="mb-6 p-2 border border-gray-300 rounded w-3/6 bg-white" />
+                <button onClick={searchBtn}
+                    className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 m-3">
+                    Search</button>
+                {/* <button onClick={}
                         className="text-indigo-600 bg-white border border-indigo-600 px-4 py-2 rounded
                          hover:bg-indigo-700 hover:text-white">
                         Reset</button> */}
 
 
-                </div>
+            </div>
             {filtered.length === 0 ?
                 (
                     <p className="text-center text-gray-500 text-xl mt-10">Oops! No charaters</p>
@@ -151,6 +119,36 @@ export default function Character() {
 
                     </div>
                 )}
+
+            <div className="flex justify-center flex-col items-center mt-10">
+
+
+                <div className="bg-white p-4 mb-6 rounded shadow-md w-full lg:w-3/6">
+                    <h3 className="text-xl font-bold mb-5 ">Add new character</h3>
+
+                    <input type="text"
+                        placeholder="image url" value={image}
+                        onChange={(e) => setImage(e.target.value)}
+                        className="w-full mb-2 p-2 border border-gray-300 rounded" />
+
+                    <input type="text" placeholder="Charater name" value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full mb-2 p-2 border border-gray-300 rounded" />
+
+                    <select value={gender}
+                        onChange={(e) => setGender(e.target.value)}
+                        className="w-full mb-2 p-2 border border-gray-300 rounded">
+
+                        <option>male</option>
+                        <option>female</option>
+
+                    </select>
+
+                    <button onClick={AddCharater}
+                        className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                        Add </button>
+                </div>
+            </div>
         </div>
     )
 }
