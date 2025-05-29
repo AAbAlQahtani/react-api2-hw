@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Register() {
 
@@ -15,6 +15,11 @@ export default function Register() {
         if (!name || !email || !password || !confirmPassword) {
             alert("Please fill all fields")
             return
+        }
+
+        if (!email.includes("@") || !email.includes(".")) {
+            alert("Please enter a valid email address");
+            return;
         }
 
         if (password.length < 6) {
@@ -63,7 +68,7 @@ export default function Register() {
 
                 <div className="mb-4">
                     <label className="block mb-1 text-gray-900">Email</label>
-                    
+
                     <input type="email" placeholder="example@example.com" value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full mb-3 p-2 border border-gray-300 rounded" />
@@ -71,7 +76,7 @@ export default function Register() {
 
                 <div className="mb-4">
                     <label className="block mb-1 text-gray-900">Password</label>
-                    
+
                     <input type="password" placeholder="Enter your password" value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         className="w-full mb-3 p-2 border border-gray-300 rounded" />
@@ -80,7 +85,7 @@ export default function Register() {
 
                 <div className="mb-4">
                     <label className="block mb-1 text-gray-900">Confirm Password</label>
-                    
+
                     <input type="password" placeholder="Confirm your password" value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         className="w-full mb-4 p-2 border border-gray-300 rounded" />

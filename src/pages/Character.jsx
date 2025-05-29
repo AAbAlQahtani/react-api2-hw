@@ -31,6 +31,11 @@ export default function Character() {
             alert("Please fill all fields")
             return
         }
+        
+        if (!image.startsWith("http") || !image.includes(".")) {
+            alert("Please enter a valid image URL");
+            return;
+        }
         axios
             .post(url, {
                 name,
