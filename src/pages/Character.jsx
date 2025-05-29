@@ -31,7 +31,7 @@ export default function Character() {
             alert("Please fill all fields")
             return
         }
-        
+
         if (!image.startsWith("http") || !image.includes(".")) {
             alert("Please enter a valid image URL");
             return;
@@ -79,22 +79,7 @@ export default function Character() {
 
 
             <div className="flex justify-center flex-col items-center mb-10">
-                <div className="w-full lg:w-3/6">
-                    <input type="text"
-                        placeholder="search for character "
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className="mb-6 p-2 border rounded w-2/6" />
-                    <button onClick={searchBtn}
-                        className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 m-3">
-                        Search</button>
-                    {/* <button onClick={}
-                        className="text-indigo-600 bg-white border border-indigo-600 px-4 py-2 rounded
-                         hover:bg-indigo-700 hover:text-white">
-                        Reset</button> */}
-
-
-                </div>
+                
 
                 <div className="bg-white p-4 mb-6 rounded shadow-md w-full lg:w-3/6">
                     <h3 className="text-xl font-bold mb-2">Add new character:</h3>
@@ -124,7 +109,22 @@ export default function Character() {
             </div>
 
 
+<div className="w-full lg:w-3/6">
+                    <input type="text"
+                        placeholder="search for character "
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="mb-6 p-2 border border-gray-300 rounded w-3/6 bg-white" />
+                    <button onClick={searchBtn}
+                        className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 m-3">
+                        Search</button>
+                    {/* <button onClick={}
+                        className="text-indigo-600 bg-white border border-indigo-600 px-4 py-2 rounded
+                         hover:bg-indigo-700 hover:text-white">
+                        Reset</button> */}
 
+
+                </div>
             {filtered.length === 0 ?
                 (
                     <p className="text-center text-gray-500 text-xl mt-10">Oops! No charaters</p>
