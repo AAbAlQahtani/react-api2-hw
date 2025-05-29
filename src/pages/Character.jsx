@@ -82,20 +82,20 @@ export default function Character() {
                 
 
                 <div className="bg-white p-4 mb-6 rounded shadow-md w-full lg:w-3/6">
-                    <h3 className="text-xl font-bold mb-2">Add new character:</h3>
+                    <h3 className="text-xl font-bold mb-5">Add new character</h3>
 
                     <input type="text"
                         placeholder="image url" value={image}
                         onChange={(e) => setImage(e.target.value)}
-                        className="w-full mb-2 p-2 border rounded" />
+                        className="w-full mb-2 p-2 border border-gray-300 rounded" />
 
                     <input type="text" placeholder="Charater name" value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full mb-2 p-2 border rounded" />
+                        className="w-full mb-2 p-2 border border-gray-300 rounded" />
 
                     <select value={gender}
                         onChange={(e) => setGender(e.target.value)}
-                        className="w-full mb-2 p-2 border rounded">
+                        className="w-full mb-2 p-2 border border-gray-300 rounded">
 
                         <option>male</option>
                         <option>female</option>
